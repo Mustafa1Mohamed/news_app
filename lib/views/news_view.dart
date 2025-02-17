@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/widgets/card_category.dart';
+import 'package:news_app/widgets/categories_list_view.dart';
 
 class NewsView extends StatelessWidget {
   const NewsView({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class NewsView extends StatelessWidget {
           ],
         ),
       ),
-      body: const CardCategory(),
+      body:  CategoriesListView(),
     );
   }
 }

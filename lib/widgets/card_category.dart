@@ -1,26 +1,28 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/models/category_model.dart';
 
-class CardCategory extends StatelessWidget {
-  const CardCategory({
-    super.key,
+class CategoryCard extends StatelessWidget {
+  const CategoryCard({
+    super.key, required this.category,
   });
-
+  final CategoryModel category;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 90,
       width: 170,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4),
-        image: const DecorationImage(
-          image: AssetImage('assets/business.avif'),
+        borderRadius: BorderRadius.circular(8),
+        image:  DecorationImage(
+          image: AssetImage(category.image),
           fit: BoxFit.fill,
         ),
       ),
-      child: const Center(
+      child:  Center(
         child: Text(
-          'Business News',
-          style: TextStyle(
+          category.name,
+          style: const TextStyle(
             color: Colors.white,
           ),
         ),
