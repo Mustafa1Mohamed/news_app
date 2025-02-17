@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/views/news_view.dart';
 
 void main() {
   runApp(const NewsApp());
@@ -9,6 +10,9 @@ class NewsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: NewsView(),
+    );
   }
 }
