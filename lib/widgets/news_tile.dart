@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/models/article_model.dart';
 
 class NewsTile extends StatelessWidget {
   const NewsTile({
-    super.key,
+    super.key, required this.articleModel,
   });
-
+  final ArticleModel articleModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,28 +14,28 @@ class NewsTile extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
           child: Image.network(
-            'https://media.istockphoto.com/id/1976099664/photo/artificial-intelligence-processor-concept-ai-big-data-array.webp?s=2048x2048&w=is&k=20&c=VPBbXakrFoSGtUQxU9tpRdL5AgupGZYVGEIk7Ckg9c4=',
+            articleModel.imageUrl,
           ),
         ),
         const SizedBox(
           height: 12,
         ),
-        const Text(
-          'Hello my name is mustafa I am a flutter developer in learning phase may allah help me to learn more and more and in the end allah bles us',
+         Text(
+          articleModel.title,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
           ),
         ),
         const SizedBox(
           height: 8,
         ),
-        const Text(
-          'Hello my name is mustafa I am a flutter developer in learning phase may allah help me to learn more and more and in the end allah bles us',
+         Text(
+          articleModel.description,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
+          style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
         ),
         const SizedBox(
           height: 22,

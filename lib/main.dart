@@ -5,6 +5,7 @@ void main() {
   runApp(const NewsApp());
 }
 
+
 class NewsApp extends StatelessWidget {
   const NewsApp({super.key});
 
