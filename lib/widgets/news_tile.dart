@@ -3,13 +3,15 @@ import 'package:news_app/models/article_model.dart';
 
 class NewsTile extends StatelessWidget {
   const NewsTile({
-    super.key, required this.articleModel,
+    super.key,
+    required this.articleModel,
   });
   final ArticleModel articleModel;
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
@@ -20,7 +22,7 @@ class NewsTile extends StatelessWidget {
         const SizedBox(
           height: 12,
         ),
-         Text(
+        Text(
           articleModel.title,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
@@ -31,11 +33,12 @@ class NewsTile extends StatelessWidget {
         const SizedBox(
           height: 8,
         ),
-         Text(
+        Text(
           articleModel.description,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
+          style:
+              const TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
         ),
         const SizedBox(
           height: 22,
