@@ -16,6 +16,7 @@ class NewsService {
       jsonData['articles'].forEach((element) {
         if (element['urlToImage'] != null && element['description'] != null) {
           ArticleModel articleModel = ArticleModel(
+            url: element['url'],
             title: element['title'],
             description: element['description'],
             imageUrl: element['urlToImage'],
