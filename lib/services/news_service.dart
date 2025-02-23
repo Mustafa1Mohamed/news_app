@@ -9,18 +9,13 @@ class NewsService {
   final String apiKey = 'c20a812f81a04824847f7072ff916f89';
   Future<List<ArticleModel>> getNews({required String category}) async {
     try {
-      Response response =
-          await dio.get('$baseUrl?country=us&apiKey=$apiKey&category=$category');
+      Response response = await dio
+          .get('$baseUrl?country=us&apiKey=$apiKey&category=$category');
       Map<String, dynamic> jsonData = response.data;
       List<ArticleModel> articles = [];
       jsonData['articles'].forEach((element) {
         if (element['urlToImage'] != null && element['description'] != null) {
-          ArticleModel articleModel = ArticleModel(
-            url: element['url'],
-            title: element['title'],
-            description: element['description'],
-            imageUrl: element['urlToImage'],
-          );
+          ArticleModel articleModel = ArticleModel.fromJson(element);
           articles.add(articleModel);
         }
       });
